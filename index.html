@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
     <script>
-      function loadPage(target, url) {
+      function loadPage(url) {
         var r = new XMLHttpRequest();
         r.open("GET", url, true);
         r.onreadystatechange = function () {
           if (r.readyState != 4 || r.status != 200) return;
-            target.innerHTML = r.responseText;
-          };
+            document.getElementById('section').innerHTML = r.responseText;
+        };
         r.send();
       }
         //document.getElementById('section').innerHTML = "<iframe src=" + page + "></iframe>";

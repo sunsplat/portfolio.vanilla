@@ -1,8 +1,8 @@
 $(document).ready(function() {
   // external js: masonry.pkgd.js, imagesloaded.pkgd.js
 
-  loadPage(document.getElementById('section'), 'portfolio.html');
-  
+  loadPage('portfolio.html');
+
   var grid = document.querySelector('.grid');
   var msnry;
 
