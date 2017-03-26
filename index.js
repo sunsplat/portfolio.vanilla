@@ -1,8 +1,8 @@
 $(document).ready(function() {
   // external js: masonry.pkgd.js, imagesloaded.pkgd.js
 
-  loadPage('portfolio.html');
-
+  $('#section').load('portfolio.html');
+  
   var grid = document.querySelector('.grid');
   var msnry;
 
@@ -15,6 +15,6 @@ $(document).ready(function() {
       gutter: 10
     });
   });
-  $('#section').load('portfolio.html');
+
 
 });
