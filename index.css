@@ -99,6 +99,18 @@ ul {
   width: auto;
 }
 
+div#portfolio {
+  display: none;
+}
+
+div#experience {
+  display: none;
+}
+
+div#contact {
+  display: none;
+}
+
 /* clear fix */
 .grid:after {
   content: '';

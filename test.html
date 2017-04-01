@@ -1,0 +1,12 @@
+<script>
+  function loadPage(url) {
+    var r = new XMLHttpRequest();
+    r.open("GET", url, true);
+    r.onreadystatechange = function () {
+      if (r.readyState != 4 || r.status != 200) return;
+        document.getElementById('section').innerHTML = r.responseText;
+    };
+    r.send();
+  }
+    //document.getElementById('section').innerHTML = "<iframe src=" + page + "></iframe>";
+</script>

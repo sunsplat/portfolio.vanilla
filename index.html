@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
     <script>
-      function loadPage(url) {
-        var r = new XMLHttpRequest();
-        r.open("GET", url, true);
-        r.onreadystatechange = function () {
-          if (r.readyState != 4 || r.status != 200) return;
-            document.getElementById('section').innerHTML = r.responseText;
-        };
-        r.send();
+      function load(id) {
+        var activeSection = document.getElementsByClassName('visible');
+        if (activeSection.length > 0) {
+          for (var x = 0; x < activeSection.length; x++) {
+            activeSection[x].style.display = 'none';
+          }
+        }
+        document.getElementById(id).style.display = 'inline';
+        document.getElementById(id).className = 'visible';
       }
-        //document.getElementById('section').innerHTML = "<iframe src=" + page + "></iframe>";
     </script>
   </head>
   <body>
     <div class="container">
       <div class="row">
-      <div id="headerWrapper" class="col-md-4">
+        <div id="headerWrapper" class="col-md-5">
             <h1 class="logo image" style="letter-spacing: 0em;">
               <a href="/">
                 ellen sun
@@ -30,15 +30,14 @@
           <div id="topNav" class="navigation">
             <nav id="mainNavigation" class="main-nav">
               <ul>
-                <li class="active" role="navigation"><a href="#" onclick="loadPage('portfolio.html');">Portfolio</a></li>
-                <li class="gallery-collection"><a href="#" onclick="loadPage('experience.html');">Experience</a></li>
-
+                <li class="active" role="navigation"><a href="#" onclick="load('portfolio');">Portfolio</a></li>
+                <li class="gallery-collection"><a href="#" onclick="load('experience');">Experience</a></li>
               </ul>
             </nav>
             <nav id="secondaryNavigation" class="main-nav dropdown-click desktop-nav">
               <ul>
                 <li class="page-collection"><a href="about.html">About</a></li>
-                <li class="page-collection"><a href="contact.html">Contact</a></li>
+                <li class="page-collection"><a href="#" onclick="load('contact');">Contact</a></li>
                 <li class="page-collection"><a href="http://cestmonvoyage.wordpress.com/" target="_blank">Blog</a></li>
               </ul>
             </nav>
@@ -64,16 +63,59 @@
           </div>
         </div>
 
-    <div id="section" class="col-md-8"></div>
+        <div id="pageWrapper" class="hfeed" role="main">
+          <div id="portfolio">
+            <div class="grid">
+              <div class="grid-sizer"></div>
+              <div class="grid-item">
+                <img src="https://ellensun.herokuapp.com/assets/images/quote.jpg" />
+              </div>
+              <div class="grid-item">
+                <img src="https://ellensun.herokuapp.com/assets/images/hapsit.jpg" />
+              </div>
+              <div class="grid-item">
+                <img src="https://ellensun.herokuapp.com/assets/images/hearmeout.jpg" />
+              </div>
+              <div class="grid-item">
+                <img src="./assets/images/fcc_tribute.jpg" />
+              </div>
+              <div class="grid-item">
+                <img src="./assets/images/fcc_weather.jpg" />
+              </div>
+              <div class="grid-item">
+                <img src="./assets/images/ericsunmusic2.jpg" />
+              </div>
+              <div class="grid-item">
+                <img src="./assets/images/hangman.jpg" />
+              </div>
+              <div class="grid-item">
+                <img src="./assets/images/fcc_wikipedia.jpg" />
+              </div>
+              <div class="grid-item">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+              </div>
+            </div>
+          </div>
+          <div id="experience">
+            <h1>Experience</h1>
+          </div>
+          <div id="contact">
+            <h1>Contact me</h1>
+          </div>
+      </div>
+
   </div>
 </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- <script src="//masonry.desandro.com/masonry.pkgd.js"></script> -->
     <!-- <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.js"></script> -->
     <script src="assets/js/masonry.js"></script>
+    <script>console.log('masonry.js loaded');</script>
     <script src="assets/js/imagesLoaded.js"></script>
+    <script>console.log('imagesLoaded.js loaded');</script>
     <script src="index.js"></script>
+    <script>console.log('index.js loaded');</script>
   </body>
 </html>
